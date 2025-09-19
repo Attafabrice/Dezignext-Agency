@@ -27,7 +27,8 @@
   const status = document.getElementById('form-status');
   
   // ⚡ Ton numéro WhatsApp (au bon format international)
-  const whatsappNumber = "225769479901"; // +225 pour Côte d'Ivoire, sans le "+"
+ const whatsappNumber = "225769479901"; // Format correct pour wa.me
+
   
   form.addEventListener('submit', function(e){
     e.preventDefault();
