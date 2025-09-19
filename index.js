@@ -26,10 +26,9 @@
   const form = document.getElementById('contact-form');
   const status = document.getElementById('form-status');
   
-  // ⚡ Ton numéro WhatsApp (au bon format international)
- const whatsappNumber = "225769479901"; // Format correct pour wa.me
+  // Numéro WhatsApp destinataire (format international)
+  const whatsappNumber = "225769479901"; // Ton numéro cible (fixe)
 
-  
   form.addEventListener('submit', function(e){
     e.preventDefault();
     
@@ -54,23 +53,24 @@
       return; 
     }
     
-    const phoneOk = /^[+\d][\d\s\-\(\)]{8,}$/.test(phone.replace(/\s/g, ''));
-    if(!phoneOk){ 
-      status.textContent = 'Numéro de téléphone invalide.'; 
-      status.style.color = '#e74c3c';
-      return; 
-    }
-    
     status.textContent = 'Préparation de votre message...';
     status.style.color = '#0077b6';
     
+    // Conversion du numéro saisi vers format international (Côte d'Ivoire : 225)
+    let cleanedNumber = phone.replace(/\s/g, ''); // enlève espaces
+    if (cleanedNumber.startsWith("0")) {
+      cleanedNumber = "225" + cleanedNumber.substring(1); 
+    } else if (!cleanedNumber.startsWith("225")) {
+      cleanedNumber = "225" + cleanedNumber; 
+    }
+
     // Préparer le message pour WhatsApp
     const whatsappMessage = `
 Nouveau contact depuis le site Dezignext:
 
 *Nom:* ${name}
 *Email:* ${email}
-*Téléphone:* ${phone}
+*Téléphone (fourni):* ${phone}
 ${company ? `*Entreprise:* ${company}\n` : ''}
 *Service demandé:* ${getServiceName(service)}
 *Message:*
@@ -79,13 +79,11 @@ ${message}
 Merci de me recontacter pour discuter de ce projet.
     `.trim();
     
-    // Encoder le message pour URL
     const encodedMessage = encodeURIComponent(whatsappMessage);
     
-    // Créer le lien WhatsApp
+    // Lien WhatsApp avec conversion du numéro
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
     
-    // Ouvrir WhatsApp dans une nouvelle fenêtre
     setTimeout(() => {
       window.open(whatsappUrl, '_blank');
       status.textContent = 'Redirection vers WhatsApp... Vous pouvez maintenant envoyer le message.';
@@ -111,8 +109,6 @@ Merci de me recontacter pour discuter de ce projet.
     
     imageContainers.forEach(container => {
       const imageName = container.getAttribute('data-image');
-      
-      // Créer un élément image
       const img = document.createElement('img');
       img.src = imageName;
       img.alt = "Projet portfolio";
@@ -121,11 +117,9 @@ Merci de me recontacter pour discuter de ce projet.
       img.style.objectFit = 'cover';
       img.style.borderRadius = '10px';
       
-      // Remplacer le texte par l'image
       container.innerHTML = '';
       container.appendChild(img);
       
-      // Gestion des erreurs de chargement d'image
       img.onerror = function() {
         container.innerHTML = 'Image non disponible';
         container.style.display = 'flex';
@@ -137,7 +131,6 @@ Merci de me recontacter pour discuter de ce projet.
     });
   }
 
-  // Charger les images lorsque la page est prête
   if (document.querySelector('.portfolio-image')) {
     document.addEventListener('DOMContentLoaded', loadPortfolioImages);
   }
