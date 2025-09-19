@@ -26,8 +26,8 @@
   const form = document.getElementById('contact-form');
   const status = document.getElementById('form-status');
   
-  // Numéro de téléphone WhatsApp Business (à modifier avec votre numéro)
-  const whatsappNumber = "0769479901"; // Exemple avec le numéro fourni
+  // ⚡ Ton numéro WhatsApp (au bon format international)
+  const whatsappNumber = "225769479901"; // +225 pour Côte d'Ivoire, sans le "+"
   
   form.addEventListener('submit', function(e){
     e.preventDefault();
@@ -48,7 +48,7 @@
     
     const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
     if(!emailOk){ 
-      status.textContent = 'Adresse e‑mail invalide.'; 
+      status.textContent = 'Adresse e-mail invalide.'; 
       status.style.color = '#e74c3c';
       return; 
     }
