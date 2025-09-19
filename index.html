@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dezignext Agency — Web & Mobile Development • Design</title>
+  <meta name="description" content="Dezignext Agency — développement web & mobile, design UI/UX et branding." />
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#">Dezignext<span class="dot">.</span>Agency</a>
+      <button id="nav-toggle" aria-label="Ouvrir le menu">☰</button>
+      <nav id="site-nav" class="site-nav">
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#about">À propos</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <h1>Design & développement web/mobile qui propulsent votre marque.</h1>
+          <p>Nous créons des interfaces élégantes et des applications performantes — du prototype à la mise en production.</p>
+          <div class="hero-cta">
+            <a class="btn primary" href="#contact">Demander un devis</a>
+            <a class="btn ghost" href="#portfolio">Voir le portfolio</a>
+          </div>
+        </div>
+        <div class="hero-media" aria-hidden="true">
+          <div class="mockup">
+            <div class="screen">📱</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="services">
+      <div class="container">
+        <h2>Nos services</h2>
+        <p class="sub">Du design à l'implémentation — nous couvrons tout le cycle produit.</p>
+        <div class="grid grid-3">
+          <article class="card">
+            <h3>Développement Web</h3>
+            <p>Sites vitrines, e‑commerce, CMS (WordPress), performances et SEO.</p>
+          </article>
+          <article class="card">
+            <h3>Applications Mobile</h3>
+            <p>Apps natives & hybrides (React Native / Flutter), intégrations API et analytics.</p>
+          </article>
+          <article class="card">
+            <h3>Graphisme & Infographie</h3>
+            <p>Création de visuels attractifs, affiches, flyers, logos et supports marketing.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="portfolio" class="portfolio">
+      <div class="container">
+        <h2>Portfolio</h2>
+        <p class="sub">Quelques projets récents — design & développement.</p>
+        <div class="grid grid-3 portfolio-grid">
+          <figure class="work">
+            <div class="thumb portfolio-image" data-image="image1.jpg">Image 1</div>
+            <figcaption>Application de livraison — UI / Frontend</figcaption>
+          </figure>
+          <figure class="work">
+            <div class="thumb portfolio-image" data-image="image2.jpg">Image 2</div>
+            <figcaption>Site e‑commerce — Fullstack</figcaption>
+          </figure>
+          <figure class="work">
+            <div class="thumb portfolio-image" data-image="image3.png">Image 3</div>
+            <figcaption>Création de logo, flyers ...</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <div class="container">
+        <h2>À propos de Dezignext</h2>
+        <p>Dezignext Agency est une équipe de développeurs et designers dédiés à la création d'expériences numériques claires, rapides et orientées résultat.</p>
+        <ul class="values">
+          <li>Design centré utilisateur</li>
+          <li>Code propre & maintenable</li>
+          <li>Livraison rapide & communication transparente</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="container">
+        <h2>Contact</h2>
+        <p class="sub">Parlez-nous de votre projet — nous vous répondons rapidement sur WhatsApp.</p>
+        <form id="contact-form" class="contact-form" novalidate>
+          <div class="form-row">
+            <input type="text" id="name" name="name" placeholder="Votre nom complet" required>
+            <input type="email" id="email" name="email" placeholder="Votre e‑mail" required>
+          </div>
+          <div class="form-row">
+            <input type="tel" id="phone" name="phone" placeholder="Votre numéro WhatsApp" required>
+            <input type="text" id="company" name="company" placeholder="Entreprise (optionnel)">
+          </div>
+          <div class="form-row">
+            <select id="service" name="service" required>
+              <option value="" disabled selected>Type de service souhaité</option>
+              <option value="web">Développement Web</option>
+              <option value="mobile">Application Mobile</option>
+              <option value="design">Design Graphique</option>
+              <option value="autre">Autre service</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <textarea id="message" name="message" rows="6" placeholder="Décrivez votre projet en détail" required></textarea>
+          </div>
+          <div class="form-row actions">
+            <button type="submit" class="btn primary">Envoyer via WhatsApp</button>
+            <button type="reset" class="btn ghost">Effacer</button>
+          </div>
+          <p id="form-status" class="form-status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Dezignext Agency — Tous droits réservés</p>
+      <div class="social">
+        <a href="#">LinkedIn</a> • <a href="#">Dribbble</a> • <a href="#">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="index.js"></script>
+</body>
+</html>

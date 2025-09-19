@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Blog — Dezignext Agency</title>
+  <meta name="description" content="Articles sur le développement web, le design UI/UX et les tendances du numérique." />
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">Dezignext<span class="dot">.</span>Agency</a>
+      <button id="nav-toggle" aria-label="Ouvrir le menu">☰</button>
+      <nav id="site-nav" class="site-nav">
+        <ul>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="index.html#portfolio">Portfolio</a></li>
+          <li><a href="index.html#about">À propos</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <h1>Notre blog</h1>
+          <p>Conseils, tutoriels et réflexions sur le design et le développement web/mobile.</p>
+        </div>
+        <div class="hero-media" aria-hidden="true">
+          <div class="mockup">
+            <div class="screen">📝</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="blog">
+      <div class="container">
+        <h2>Articles récents</h2>
+        <div class="grid grid-2">
+          <article class="card">
+            <h3>Les tendances UI/UX en 2025</h3>
+            <p class="meta">15 juin 2023 • Design</p>
+            <p>Exploration des nouvelles tendances en matière d'interfaces utilisateur et d'expérience utilisateur pour cette année.</p>
+            <a href="article1.html" class="btn ghost">Lire l'article</a>
+          </article>
+          <article class="card">
+            <h3>Optimiser les performances web</h3>
+            <p class="meta">2 juin 2025 • Développement</p>
+            <p>Techniques avancées pour améliorer le temps de chargement et l'expérience globale de vos sites web.</p>
+            <a href="article2.html" class="btn ghost">Lire l'article</a>
+          </article>
+          <article class="card">
+            <h3>Accessibilité numérique : les bases</h3>
+            <p class="meta">20 mai 2025 • Design</p>
+            <p>Pourquoi et comment rendre vos sites web accessibles à tous les utilisateurs, quel que soit leur handicap.</p>
+            <a href="article3.html" class="btn ghost">Lire l'article</a>
+          </article>
+          <article class="card">
+            <h3>React Native vs Flutter</h3>
+            <p class="meta">5 mai 2023 • Développement</p>
+            <p>Comparaison détaillée des deux frameworks les plus populaires pour le développement d'applications mobiles cross-platform.</p>
+            <a href="article4.html" class="btn ghost">Lire l'article</a>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Dezignext Agency — Tous droits réservés</p>
+      <div class="social">
+        <a href="#">LinkedIn</a> • <a href="#">Dribbble</a> • <a href="#">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Optimiser les performances web — Dezignext Blog</title>
+  
+  <meta name="description" content="Techniques avancées pour améliorer le temps de chargement et l'expérience globale des sites web.">
+  <style>
+    :root{--maxw:900px;--accent:#0b3a66;--muted:#6b7280}
+    body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;line-height:1.65;color:#0f1724;padding:24px;background:#fbfdff}
+    .container{max-width:var(--maxw);margin:0 auto;background:#fff;padding:36px;border-radius:12px;box-shadow:0 8px 30px rgba(11,58,102,0.06)}
+    header h1{font-size:clamp(1.6rem,3.6vw,2.4rem);margin:0 0 8px;color:var(--accent)}
+    .meta{color:var(--muted);font-size:0.95rem;margin-bottom:20px}
+    .lead{font-size:1.05rem;color:#111827;margin-bottom:18px}
+    h2{color:var(--accent);margin-top:26px}
+    pre{background:#0f1724;color:#fff;padding:12px;border-radius:8px;overflow:auto;font-size:0.9rem}
+    code{font-family:monospace;font-size:0.95rem}
+    ul{margin-left:1.05rem}
+    footer{margin-top:32px;border-top:1px dashed #eef2f7;padding-top:16px;color:var(--muted);font-size:0.95rem}
+    a{color:var(--accent);text-decoration:none}
+    @media (max-width:600px){body{padding:12px}.container{padding:20px}}
+  </style>
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>Optimiser les performances web</h1>
+      <p class="meta">2 juin 2025 • Développement</p>
+    </header>
+
+    <article>
+      <p class="lead">Un site rapide améliore l'expérience utilisateur, le référencement et les conversions. Voici un guide pratique et concret — techniques et priorités — pour réduire les temps de chargement et rendre vos pages plus réactives.</p>
+
+      <h2>1. Mesurer avant d’optimiser</h2>
+      <p>Commencez par mesurer : WebPageTest, Lighthouse, GTmetrix ou PageSpeed Insights donnent des metrics clés (LCP, FID/INP, CLS). Identifiez les goulots d’étranglement avant d’appliquer des optimisations aveugles.</p>
+
+      <h2>2. Prioriser le rendu critique (Critical Rendering Path)</h2>
+      <p>Réduisez les ressources bloquantes au-dessus de la ligne de flottaison : déplacez les scripts non essentiels en bas ou utilisez <code>defer</code>/<code>async</code>, et inlinez le CSS critique.</p>
+      <pre><code>&lt;link rel="preload" href="/styles/crit.css" as="style"&gt;
+&lt;link rel="stylesheet" href="/styles/main.css" media="print" onload="this.media='all'"&gt;
+&lt;script src="/js/app.js" defer&gt;&lt;/script&gt;</code></pre>
+
+      <h2>3. Images et médias</h2>
+      <ul>
+        <li>Utilisez des formats modernes (WebP, AVIF) et adaptez les tailles via <code>srcset</code> et <code>picture</code>.</li>
+        <li>Activez le lazy-loading (<code>loading="lazy"</code>) pour les images hors écran.</li>
+        <li>Servez les images optimisées côté serveur (redimensionner, compresser).</li>
+      </ul>
+
+      <h2>4. Mise en cache et CDN</h2>
+      <p>Configurez des en-têtes de cache efficaces (<code>Cache-Control</code>, <code>ETag</code>) et utilisez un CDN pour rapprocher les ressources des utilisateurs. Cachez les assets statiques longuement, mais invalidation facile via fingerprinting (hash dans le nom de fichier).</p>
+
+      <h2>5. Réduire et combiner les ressources</h2>
+      <p>Minifiez HTML, CSS et JS ; évitez le bundling excessif pour ne pas retarder le chargement initial. Utilisez le splitting pour charger le code au moment nécessaire (code-splitting).</p>
+
+      <h2>6. Optimisations réseau modernes</h2>
+      <ul>
+        <li>Privilégiez HTTP/2 ou HTTP/3 pour réduire la latence et améliorer le multiplexing.</li>
+        <li>Utilisez <code>&lt;link rel="preconnect"&gt;</code> et <code>preload</code> pour établir rapidement les connexions critiques (fonts, CDN).</li>
+      </ul>
+
+      <h2>7. Polices web</h2>
+      <p>Les polices bloquent le rendu si mal configurées. Utilisez <code>font-display: swap</code>, préchargez les polices critiques et limitez le nombre de variantes chargées.</p>
+
+      <h2>8. JavaScript : diminuer l’impact</h2>
+      <p>Évitez d’exécuter de gros bundles JS au chargement. Déplacez la logique non critique et lazy-loadez les librairies lourdes. Mesurez le temps JS avec les outils de performance du navigateur.</p>
+
+      <h2>9. Backend et base de données</h2>
+      <p>Optimisez les requêtes, activez la compression (gzip/ Brotli), utilisez la mise en cache serveur (Redis, memcached) et profilez les routes lentes. Réduisez les redirections inutiles.</p>
+
+      <h2>10. Progressive Web App & caching côté client</h2>
+      <p>Les Service Workers permettent un caching fin et des expériences offline/near‑instant. Utilisez Workbox pour simplifier la gestion des stratégies de cache.</p>
+
+      <h2>11. Automatiser et intégrer les tests de performance</h2>
+      <p>Intégrez des tests de performance dans votre CI (Lighthouse CI, Sitespeed.io) pour détecter les régressions et maintenir des budgets de performance.</p>
+
+      <h2>Conclusion</h2>
+      <p>L’optimisation des performances est un travail continu : mesurer, prioriser et itérer. Commencez par les améliorations à fort impact (images, cache, ressources bloquantes) puis affinez (polices, JS, backend). Un site plus rapide améliore l’engagement, le SEO et les conversions — c’est un investissement rentable.</p>
+    </article>
+
+    <footer>
+      <p>Article rédigé par <strong>Dezignext Agency</strong>. Veux-tu que je génère une version Markdown ou que j’intègre ce fichier directement dans ton CMS ?</p>
+    </footer>
+  </main>
+</body>
+</html>

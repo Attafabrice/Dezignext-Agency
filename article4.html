@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>React Native vs Flutter — Dezignext Blog</title>
+  <meta name="description" content="Comparaison détaillée des frameworks React Native et Flutter pour le développement mobile cross-platform.">
+  <style>
+    :root{--maxw:920px;--accent:#0b3a66;--muted:#6b7280}
+    body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;line-height:1.65;color:#0f1724;padding:24px;background:#fbfdff}
+    .container{max-width:var(--maxw);margin:0 auto;background:#fff;padding:36px;border-radius:12px;box-shadow:0 8px 30px rgba(11,58,102,0.06)}
+    header h1{font-size:clamp(1.6rem,3.6vw,2.4rem);margin:0 0 8px;color:var(--accent)}
+    .meta{color:var(--muted);font-size:0.95rem;margin-bottom:20px}
+    .lead{font-size:1.05rem;color:#111827;margin-bottom:18px}
+    h2{color:var(--accent);margin-top:26px}
+    table{width:100%;border-collapse:collapse;margin-top:12px}
+    th,td{padding:10px;border:1px solid #eef2f7;text-align:left}
+    th{background:#fbfdff}
+    ul{margin-left:1.05rem}
+    footer{margin-top:32px;border-top:1px dashed #eef2f7;padding-top:16px;color:var(--muted);font-size:0.95rem}
+    a{color:var(--accent);text-decoration:none}
+    @media (max-width:600px){body{padding:12px}.container{padding:20px}table,thead,tbody,th,td,tr{display:block}th{position:sticky;top:0}}
+  </style>
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>React Native vs Flutter</h1>
+      <p class="meta">5 mai 2023 • Développement</p>
+    </header>
+
+    <article>
+      <p class="lead">React Native et Flutter sont aujourd'hui les deux frameworks dominants pour le développement d'applications mobiles multiplateformes. Choisir entre eux dépend du contexte projet, des compétences de l'équipe et des priorités (performances, productivité, écosystème). Voici une comparaison détaillée pour vous aider à décider.</p>
+
+      <h2>Présentation rapide</h2>
+      <ul>
+        <li><strong>React Native</strong> — développé par Facebook (Meta). S'appuie sur JavaScript/TypeScript et permet de créer des interfaces en utilisant des composants natifs.</li>
+        <li><strong>Flutter</strong> — développé par Google. Utilise le langage Dart et dessine l'interface avec son propre moteur de rendu (Skia), offrant un contrôle fin sur l'apparence.</li>
+      </ul>
+
+      <h2>Langage et courbe d'apprentissage</h2>
+      <p><strong>React Native</strong> : si votre équipe maîtrise déjà JavaScript/TypeScript et React, la montée en compétence est rapide. <br>
+         <strong>Flutter</strong> : demande l'apprentissage de Dart. La courbe est raisonnable, et de nombreux développeurs apprécient la cohérence du langage et de l'outillage.</p>
+
+      <h2>Performance</h2>
+      <p>Flutter a souvent un léger avantage en performance grâce à son moteur de rendu natif : animations plus fluides et contrôle fin. React Native repose sur un bridge entre JS et le code natif, ce qui peut introduire des frais généraux sur des apps très complexes ou riches en animations, mais des améliorations récentes (architecture TurboModules, Fabric) réduisent cet écart.</p>
+
+      <h2>UI et personnalisation</h2>
+      <p>Flutter offre un rendu pixel-perfect et un ensemble riche de widgets personnalisables ; idéal si l'apparence doit être identique sur toutes les plateformes. React Native s'appuie davantage sur les composants natifs, ce qui donne un rendu naturel par plateforme mais peut nécessiter plus d'efforts pour obtenir une UI identique partout.</p>
+
+      <h2>Écosystème et bibliothèques</h2>
+      <p>React Native bénéficie d'un vaste écosystème JS, avec de nombreuses bibliothèques et intégrations. Flutter rattrape vite avec des packages de qualité, mais certains plugins natifs peuvent manquer ou être moins matures. Vérifiez toujours la disponibilité des plugins nécessaires (paiement, navigation avancée, modules natifs).</p>
+
+      <h2>Productivité et dev experience</h2>
+      <ul>
+        <li><strong>Hot Reload</strong> : les deux proposent le hot reload/refresh pour itérer rapidement, Flutter a été longtemps reconnu pour la rapidité et la fiabilité de son hot reload.</li>
+        <li><strong>Outils</strong> : Flutter propose un SDK complet et des outils robustes (Flutter DevTools). React Native s'intègre naturellement aux outils JS existants.</li>
+      </ul>
+
+      <h2>Taille de l'application</h2>
+      <p>Les apps Flutter ont tendance à avoir une taille initiale plus importante (runtime + assets), tandis que React Native peut rester plus léger si vous réutilisez des librairies natives et évitez d'inclure trop d'assets.</p>
+
+      <h2>Interopérabilité native</h2>
+      <p>Les deux permettent d'écrire des modules natifs en Java/Swift/Obj-C pour accéder à des fonctionnalités spécifiques. La documentation et les exemples sont assez fournis dans les deux écosystèmes, mais l'effort d'intégration peut varier selon la communauté et les plugins existants.</p>
+
+      <h2>Cas d'usage recommandés</h2>
+      <table>
+        <thead>
+          <tr><th>Besoin</th><th>Recommandation</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Prototype rapide / équipe JS</td><td>React Native</td></tr>
+          <tr><td>UI sur-mesure, animations complexes</td><td>Flutter</td></tr>
+          <tr><td>Intégration profonde avec code natif existant</td><td>React Native</td></tr>
+          <tr><td>Performance maximale et contrôle visuel</td><td>Flutter</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Communauté et support</h2>
+      <p>React Native dispose d'une large communauté de développeurs JS et de nombreuses entreprises l'utilisent en production depuis longtemps. Flutter a une communauté très active et croissante, et bénéficie du soutien fort de Google, notamment pour les nouveaux outils multiplateformes (desktop, web).</p>
+
+      <h2>Coûts et recrutement</h2>
+      <p>Il est généralement plus facile de trouver des développeurs JavaScript/TypeScript (React Native) que Dart (Flutter), mais la demande pour Flutter augmente, et des développeurs backend/front peuvent apprendre Dart plus rapidement que d'apprendre un paradigme natif complet.</p>
+
+      <h2>Conclusion</h2>
+      <p>Il n’existe pas de « meilleur » framework universel : le choix dépend des priorités. Si vous avez une équipe JS existante et visez une intégration native forte, React Native est un excellent choix. Si vous avez besoin d’un rendu totalement contrôlé, d’animations fluides et d’une UI identique sur toutes les plateformes, Flutter peut être préférable. Pour des décisions critiques, réalisez des prototypes rapides dans les deux technologies pour comparer coûts de développement, performance et expérience utilisateur.</p>
+    </article>
+
+    <footer>
+      <p>Article rédigé par <strong>Dezignext Agency</strong>. Veux-tu que je génère une infographie comparative ou que j'exporte cet article en Markdown ?</p>
+    </footer>
+  </main>
+</body>
+</html>

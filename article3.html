@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Accessibilité numérique : les bases — Dezignext Blog</title>
+  <meta name="description" content="Pourquoi et comment rendre vos sites web accessibles à tous les utilisateurs, quel que soit leur handicap.">
+  <style>
+    :root{--maxw:900px;--accent:#0b3a66;--muted:#6b7280}
+    body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;line-height:1.65;color:#0f1724;padding:24px;background:#fbfdff}
+    .container{max-width:var(--maxw);margin:0 auto;background:#fff;padding:36px;border-radius:12px;box-shadow:0 8px 30px rgba(11,58,102,0.06)}
+    header h1{font-size:clamp(1.6rem,3.6vw,2.4rem);margin:0 0 8px;color:var(--accent)}
+    .meta{color:var(--muted);font-size:0.95rem;margin-bottom:20px}
+    .lead{font-size:1.05rem;color:#111827;margin-bottom:18px}
+    h2{color:var(--accent);margin-top:26px}
+    ul{margin-left:1.05rem}
+    pre{background:#0f1724;color:#fff;padding:12px;border-radius:8px;overflow:auto;font-size:0.9rem}
+    code{font-family:monospace;font-size:0.95rem}
+    footer{margin-top:32px;border-top:1px dashed #eef2f7;padding-top:16px;color:var(--muted);font-size:0.95rem}
+    a{color:var(--accent);text-decoration:none}
+    @media (max-width:600px){body{padding:12px}.container{padding:20px}}
+  </style>
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>Accessibilité numérique : les bases</h1>
+      <p class="meta">20 mai 2025 • Design</p>
+    </header>
+
+    <article>
+      <p class="lead">Rendre un site accessible, c’est permettre à toutes et tous — y compris les personnes en situation de handicap — d’accéder, comprendre et interagir avec votre contenu. Au‑delà d’une obligation légale dans de nombreux pays, l’accessibilité améliore l’expérience générale et élargit votre audience. Voici les principes essentiels et des actions concrètes à mettre en place.</p>
+
+      <h2>Pourquoi l’accessibilité compte</h2>
+      <ul>
+        <li><strong>Inclusion sociale :</strong> garantir l’accès à l’information pour les personnes malvoyantes, malentendantes, moteurs ou cognitives.</li>
+        <li><strong>Valeur commerciale :</strong> atteindre un public plus large et améliorer la réputation de la marque.</li>
+        <li><strong>Conformité légale :</strong> respecter les normes locales et internationales (ex. RGAA, WCAG).</li>
+        <li><strong>SEO et performance :</strong> une structure sémantique claire favorise le référencement.</li>
+      </ul>
+
+      <h2>Principes de base (WCAG en bref)</h2>
+      <p>Les WCAG reposent sur quatre principes : percevable, utilisable, compréhensible et robuste. Visez au moins le niveau AA pour couvrir la majorité des besoins.</p>
+
+      <h2>Bonnes pratiques techniques</h2>
+      <h3>1. HTML sémantique</h3>
+      <p>Utilisez les balises appropriées (<code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;footer&gt;</code>). Elles facilitent la navigation via les lecteurs d’écran et améliorent la structure du document.</p>
+
+      <h3>2. Texte alternatif et médias</h3>
+      <p>Fournissez des <code>alt</code> descriptifs pour les images, des transcriptions pour l’audio et des sous-titres pour les vidéos. Pour les images décoratives, utilisez <code>alt=""</code> pour éviter le bruit verbal.</p>
+
+      <h3>3. Navigation au clavier</h3>
+      <p>Assurez-vous que toutes les interactions (menus, formulaires, modales) sont accessibles au clavier. Testez l’ordre de tabulation et la visibilité du focus (<code>outline</code> clair).</p>
+
+      <h3>4. Contraste des couleurs</h3>
+      <p>Respectez un ratio de contraste suffisant pour le texte (au moins 4.5:1 pour le texte normal, 3:1 pour le texte large). Évitez les combinaisons problématiques et fournissez des options de thème si possible.</p>
+
+      <h3>5. Formulaires accessibles</h3>
+      <p>Associez toujours les <code>&lt;label&gt;</code> aux champs d’entrée, fournissez des indications et des messages d’erreur clairs et facilement détectables par les technologies d’assistance.</p>
+
+      <h3>6. Utiliser ARIA judicieusement</h3>
+      <p>ARIA peut aider lorsque le HTML sémantique ne suffit pas, mais il ne doit pas remplacer une structure correcte. Préférez les éléments natifs et limitez l’usage d’ARIA aux cas nécessaires.</p>
+
+      <h3>7. Performance et accessibilité</h3>
+      <p>Un site rapide et réactif réduit la frustration pour tous les utilisateurs, en particulier ceux qui utilisent des technologies d’assistance ou des connexions lentes.</p>
+
+      <h2>Tests et outils</h2>
+      <ul>
+        <li>Lighthouse, Axe, WAVE pour des audits automatisés.</li>
+        <li>Lecteurs d’écran (NVDA, VoiceOver) pour des tests manuels.</li>
+        <li>Tests utilisateurs avec des personnes en situation de handicap pour valider les cas réels.</li>
+      </ul>
+
+      <h2>Processus d’intégration</h2>
+      <p>Intégrez l’accessibilité dès la conception : checks d’accessibilité dans les revues de maquette, critères dans la definition of done, et formation continue des équipes produit/design/dev.</p>
+
+      <h2>Conclusion</h2>
+      <p>L’accessibilité est une responsabilité collective et un investissement : elle améliore l’expérience utilisateur, la portée et la qualité globale du produit. Commencez par les bases présentées ici, mesurez les progrès et impliquez des utilisateurs réels pour créer des expériences vraiment inclusives.</p>
+    </article>
+
+    <footer>
+      <p>Article rédigé par <strong>Dezignext Agency</strong>. Souhaites-tu que je génère une checklist imprimable ou que j’intègre ce fichier dans ton blog ?</p>
+    </footer>
+  </main>
+</body>
+</html>
