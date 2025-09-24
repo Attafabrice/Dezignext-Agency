@@ -27,7 +27,7 @@
   const status = document.getElementById('form-status');
   
   // Numéro WhatsApp destinataire (format international)
-  const whatsappNumber = "225769479901"; // Ton numéro cible (fixe)
+  const whatsappNumber = "https://wa.me/message/IUCMRFST6A3TM1"; // Ton numéro cible (fixe)
 
   form.addEventListener('submit', function(e){
     e.preventDefault();
