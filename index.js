@@ -26,8 +26,9 @@
   const form = document.getElementById('contact-form');
   const status = document.getElementById('form-status');
   
-  // Numéro WhatsApp destinataire (format international)
-  const whatsappNumber = "https://wa.me/message/IUCMRFST6A3TM1"; // Ton numéro cible (fixe)
+  // Lien WhatsApp Business généré automatiquement (fixe)
+  const whatsappLink = "https://wa.me/message/IUCMRFST6A3TM1";
+
 
   form.addEventListener('submit', function(e){
     e.preventDefault();
@@ -81,8 +82,9 @@ Merci de me recontacter pour discuter de ce projet.
     
     const encodedMessage = encodeURIComponent(whatsappMessage);
     
-    // Lien WhatsApp avec conversion du numéro
-    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+   // Lien WhatsApp basé sur ton lien Business
+const whatsappUrl = `${whatsappLink}?text=${encodedMessage}`;
+
     
     setTimeout(() => {
       window.open(whatsappUrl, '_blank');
